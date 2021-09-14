@@ -11,10 +11,21 @@ label_date = Label(window, font = ('Helvetica', 30), bg='Black', fg='Green')
 label_time.pack()
 label_date.pack()
 
+# Variant 1 - while loop
+
 while True:
     label_time.config(text=time.strftime("%H:%M:%S", time.localtime()))
     label_date.config(text=time.strftime("%d %B %Y", time.localtime()))
     window.update()
     time.sleep(0.1)
+
+# Variant 2 - after calls
+
+# def update():
+#     label_time.config(text=time.strftime("%H:%M:%S", time.localtime()))
+#     label_date.config(text=time.strftime("%d %B %Y", time.localtime()))
+#     window.after(1000, update)
+#
+# update()
 
 window.mainloop()
