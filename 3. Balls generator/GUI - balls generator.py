@@ -1,11 +1,13 @@
+from os import name
 from tkinter import *
-import time
-import random
+from random import randint
+from multiprocessing import Process, cpu_count
 
 WIDTH = 1000
 HEIGHT = 1000
 
 window = Tk()
+window.title("Balls generator")
 canvas = Canvas(window, width = WIDTH, height = HEIGHT)
 canvas.pack()
 
@@ -15,7 +17,6 @@ class Ball:
         self.image = canvas.create_oval(x, y, x+diameter, y+diameter, fill=color)
         self.xVelocity = xVelocity
         self.yVelocity = yVelocity
-        self.diameter = diameter
 
     def move(self):
         coords = self.canvas.coords(self.image)
@@ -25,10 +26,10 @@ class Ball:
             self.yVelocity = -self.yVelocity
         self.canvas.move(self.image, self.xVelocity, self.yVelocity)
 
-def gen_speed(): return random.randint(0,10)
-def gen_size(): return random.randint(10,299)
-def gen_coords(): return random.randint(300,699)
-def gen_color(): return ('#%06X' % random.randint(0, 0xFFFFFF))
+def gen_speed(): return randint(1,10)
+def gen_size(): return randint(10,299)
+def gen_coords(): return randint(300,699)
+def gen_color(): return ('#%06X' % randint(0, 0xFFFFFF))
 
 def generator():
     number = 'x'
@@ -38,13 +39,13 @@ def generator():
         i = Ball(canvas, gen_coords(), gen_coords(), gen_size(), gen_speed(), gen_speed(), gen_color())
         balls.append(i)
     return balls
-    
-balls_list = generator()
 
-while True:   
+def update(): 
     for i in balls_list:
         i.move()  
-    window.update()
-    time.sleep(0.01)
+    window.after(10, update)
+
+balls_list = generator()
+update()
 
 window.mainloop()
