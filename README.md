@@ -25,6 +25,14 @@ A program, which generates desired number of balls with random size, color and s
 
 # 4. Calculator
 
+Supported operations: + - * /
 Both .py and .exe
 
 ![Снимок экрана (775)](https://user-images.githubusercontent.com/43440389/133270959-94823894-326b-465e-9a30-7e91515019c6.png)
+
+# 5. Text editor
+
+Functionality - open, edit and save .txt files. Cut/copy/paste. Auto-expanding text field. Select font, font size, font color and background color
+Both .py and .exe
+
+![Снимок экрана (781)](https://user-images.githubusercontent.com/43440389/133431158-f1e56ebf-5e05-47da-83c1-519000eca08c.png)
