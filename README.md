@@ -2,15 +2,15 @@
 
 # 1. Rock/paper/scissors game
 
-Only .py 
+2 versions - terminal and GUI (both .py and .exe)
 
-Current functionality:
-- Rock-paper-scissors game
-- Basic foolproof - reject invalid input
-- Score counting
-- Set the number of rounds you wanna play
+Terminal version:
 
 ![Снимок экрана (707)](https://user-images.githubusercontent.com/43440389/132217752-6f63a7bb-a0d8-4ab1-bae1-002b40b52ac4.png)
+
+GUI version:
+
+![Снимок экрана (784)](https://user-images.githubusercontent.com/43440389/133589573-0c72cf63-016f-490d-a9b5-d571b343b631.png)
 
 # 2. Clock program
 
