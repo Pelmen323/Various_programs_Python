@@ -39,3 +39,11 @@ Functionality - open, edit and save .txt files. Cut/copy/paste. Auto-expanding t
 Both .py and .exe
 
 ![Снимок экрана (781)](https://user-images.githubusercontent.com/43440389/133431158-f1e56ebf-5e05-47da-83c1-519000eca08c.png)
+
+# 6. "Tic tac toe" game
+
+Both .py and .exe
+
+![Снимок экрана (796)](https://user-images.githubusercontent.com/43440389/133636843-56dd3daa-eaad-4326-931f-98b40de61f4e.png)
+
+
