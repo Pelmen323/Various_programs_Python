@@ -46,4 +46,10 @@ Both .py and .exe
 
 ![Снимок экрана (796)](https://user-images.githubusercontent.com/43440389/133636843-56dd3daa-eaad-4326-931f-98b40de61f4e.png)
 
+# 7. "Snake" game
 
+- Highly customizable - change the colors of the elements and the scale of the game
+
+Both .py and .exe
+
+![Снимок экрана (811)](https://user-images.githubusercontent.com/43440389/133792584-90bb2921-a553-4529-ac53-1738eed1661f.png)
