@@ -10,7 +10,7 @@ def copy():
     copy_btn.config(text='Text copied!', state=NORMAL)
 
 window = Tk()
-window.title('String generator')
+window.title('Random string generator')
                                                                                             # Defining variables for checkboxes
 letters = BooleanVar()
 letters.set(True)
@@ -27,7 +27,7 @@ punctuation.set(False)
 frame = Frame(window)
 
 info_lbl = Label(frame, text='Hover for info!      ')
-Hovertip(info_lbl,"Hi! The program can generate the string of any length with various symbols.\n\n'Copy' button will copy everything in the text field to clipboard, you don't need to select anything\n\nWhen generating >50k symbols, the text will be automatically copied to your clipboard\nWhen generating big strings (>1m), it may take some time\nWhen generating strings over 5m symbols, the program will generate 5m symbols and then copy and paste them until it reaches the desired length.\nTested on 1b string. Prepare your RAM :)", hover_delay=500)
+Hovertip(info_lbl,"Hi! The program can generate the string of any length with various symbols. Github - https://github.com/Pelmen323/Various_programs_Python \n\n'Copy' button will copy everything in the text field to clipboard, you don't need to select anything\n\nWhen generating >50k symbols, the text will be automatically copied to clipboard\nWhen generating big strings (>1m), it may take some time\nWhen generating strings over 5m symbols, the program will generate 5m symbols and then copy and paste the result until it reaches the desired length.\nTested on 1b string. Prepare your RAM :)", hover_delay=500)
 info_lbl.pack(side=LEFT)
 
 lbl_length = Label(frame, text='Set the length of generated string: ')
@@ -65,7 +65,7 @@ def generate_string():
         copy_btn.config(text='Copy output', state=NORMAL)
     elif length < 5000000:
         text_field_output.delete(1.0,END) 
-        text_field_output.insert(1.0, 'Your text is not printed to avoid freezes. It is automatically copied to your clipboard')
+        text_field_output.insert(1.0, 'Your text is not printed to avoid freezes. It is automatically copied to clipboard')
         x = ''.join(random.choice((string.ascii_letters if letters.get() == True else '') + \
                                                     (string.digits if digits.get() == True else '') + \
                                                     (string.punctuation if punctuation.get() == True else '') + \
@@ -82,7 +82,7 @@ def generate_string():
         window.clipboard_clear()
         window.clipboard_append(x)
         text_field_output.delete(1.0,END) 
-        text_field_output.insert(1.0, 'Your text is not printed to avoid freezes. It is automatically copied to your clipboard.')                          
+        text_field_output.insert(1.0, 'Your text is not printed to avoid freezes. It is automatically copied to clipboard.')                          
         copy_btn.config(text='Text copied!', state=DISABLED)  
 
 generate_btn = Button(frame, width=10, text='Generate!', command=generate_string)
