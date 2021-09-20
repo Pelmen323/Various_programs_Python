@@ -53,3 +53,14 @@ Both .py and .exe
 Both .py and .exe
 
 ![Снимок экрана (811)](https://user-images.githubusercontent.com/43440389/133792584-90bb2921-a553-4529-ac53-1738eed1661f.png)
+
+# 8. Random string generator
+
+- Generate random string of any length (from 1 to ...)
+- Different used symbols (English letters, Russian letters, digits, special symbols) with the ability to choose any combination
+- Copy to clipboard function (strings over 50k symbols are copied to clipboard automatically)
+
+Both .py and .exe
+
+![Снимок экрана (870)](https://user-images.githubusercontent.com/43440389/134009095-c9866711-08ac-4613-ac35-5e78f7d0e4de.png)
+
