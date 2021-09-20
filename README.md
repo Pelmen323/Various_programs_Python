@@ -1,5 +1,7 @@
 # Several small projects in Python, merged for convenience
 
+# PLEASE NOTE - the antivirus will throw false positive errors on exe files, marking them as Trojan. This is stupid and I can't do anything, since these are just .py files, compiled with pyinstaller
+
 # 1. Rock/paper/scissors game
 
 2 versions - terminal and GUI (both .py and .exe)
