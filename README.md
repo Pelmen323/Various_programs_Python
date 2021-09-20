@@ -64,5 +64,6 @@ Both .py and .exe
 
 Both .py and .exe
 
-![Снимок экрана (870)](https://user-images.githubusercontent.com/43440389/134009095-c9866711-08ac-4613-ac35-5e78f7d0e4de.png)
+![Снимок экрана (874)](https://user-images.githubusercontent.com/43440389/134017023-7eda907c-559e-4464-b328-fc5bae744bdd.png)
+
 
