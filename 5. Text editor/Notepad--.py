@@ -10,11 +10,10 @@ def open_file():
     try:
         text_field.delete(1.0, END) 
         filepath = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
-        file = open(filepath, 'r')
-        text_field.insert(1.0, file.read())
+        with open(filepath, 'r') as file:
+            text_field.insert(1.0, file.read())
         current_path = filepath
         window.title('Notepad -- : '+current_path)
-        file.close()
     except Exception:
         messagebox.showerror(title='Error', message="Couldn't read the file :(")
 
@@ -39,7 +38,7 @@ def save_file_as():
             return  
         text = str(text_field.get(1.0, END))
         filepath.write(text)
-        filepath.close
+        filepath.close()
         current_path = filepath.name                                # We need only 'name' part, without encoding or mode
         window.title('Notepad -- : '+current_path)
     except:
