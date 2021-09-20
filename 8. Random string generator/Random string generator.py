@@ -2,7 +2,8 @@ from tkinter import *
 import random
 import string
 from idlelib.tooltip import Hovertip
-russian_alphabet ='йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮёЁ'      # random.choice doesn't accept lists, only string
+russian_alphabet_upper ='ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ'      # random.choice doesn't accept lists, only string
+russian_alphabet_lower ='йцукенгшщзхъфывапролджэячсмитьбюё'
 
 def copy():
     window.clipboard_clear()
@@ -12,11 +13,17 @@ def copy():
 window = Tk()
 window.title('Random string generator')
                                                                                             # Defining variables for checkboxes
-letters = BooleanVar()
-letters.set(True)
+letters_upper = BooleanVar()
+letters_upper.set(True)
 
-letters_rus = BooleanVar()
-letters_rus.set(False)
+letters_lower = BooleanVar()
+letters_lower.set(True)
+
+letters_rus_upper = BooleanVar()
+letters_rus_upper.set(False)
+
+letters_rus_lower = BooleanVar()
+letters_rus_lower.set(False)
 
 digits = BooleanVar() 
 digits.set(True)
@@ -37,8 +44,10 @@ set_length = Entry(frame, width=10)
 set_length.insert(0,'25')                                                                   # Default length is set to 25
 set_length.pack(side=LEFT)
 
-Checkbutton(frame, text = "English letters", variable= letters, onvalue=True, offvalue=False).pack(side=LEFT)
-Checkbutton(frame, text = "Russian letters", variable= letters_rus, onvalue=True, offvalue=False).pack(side=LEFT)
+Checkbutton(frame, text = "English letters (Uppercase)", variable= letters_upper, onvalue=True, offvalue=False).pack(side=LEFT)
+Checkbutton(frame, text = "English letters (Lowercase)", variable= letters_lower, onvalue=True, offvalue=False).pack(side=LEFT)
+Checkbutton(frame, text = "Russian letters (Uppercase)", variable= letters_rus_upper, onvalue=True, offvalue=False).pack(side=LEFT)
+Checkbutton(frame, text = "Russian letters (Lowercase)", variable= letters_rus_lower, onvalue=True, offvalue=False).pack(side=LEFT)
 Checkbutton(frame, text = "Digits", variable= digits, onvalue=True, offvalue=False).pack(side=LEFT)
 Checkbutton(frame, text = "Special symbols", variable= punctuation, onvalue=True, offvalue=False).pack(side=LEFT)
 
@@ -52,32 +61,38 @@ def generate_string():
         return
 
                                                                                             # Safecheck
-    if letters.get() == False and digits.get() == False and punctuation.get() == False and letters_rus.get() == False: 
+    if letters_upper.get() == False and letters_lower.get() == False and digits.get() == False and punctuation.get() == False and letters_rus_upper.get() == False and letters_rus_lower.get() == False: 
         text_field_output.delete(1.0,END)
         text_field_output.insert(1.0, "At least 1 checkbox should be selected")
         return
     if length < 50000:                                                                              # High probability of freezes if displaying >50k symbols
         text_field_output.delete(1.0,END)                                                           # Conditions for various settings combinations
-        text_field_output.insert(1.0, ''.join(random.choice((string.ascii_letters if letters.get() == True else '') + \
+        text_field_output.insert(1.0, ''.join(random.choice((string.ascii_uppercase if letters_upper.get() == True else '') + \
+                                                    (string.ascii_lowercase if letters_lower.get() == True else '') + \
                                                     (string.digits if digits.get() == True else '') + \
                                                     (string.punctuation if punctuation.get() == True else '') + \
-                                                    (russian_alphabet if letters_rus.get() == True else '')) for i in range(length)))
+                                                    (russian_alphabet_upper if letters_rus_upper.get() == True else '') + \
+                                                    (russian_alphabet_lower if letters_rus_lower.get() == True else '')) for i in range(length)))
         copy_btn.config(text='Copy output', state=NORMAL)
     elif length < 5000000:
         text_field_output.delete(1.0,END) 
         text_field_output.insert(1.0, 'Your text is not printed to avoid freezes. It is automatically copied to clipboard')
-        x = ''.join(random.choice((string.ascii_letters if letters.get() == True else '') + \
+        x = ''.join(random.choice((string.ascii_uppercase if letters_upper.get() == True else '') + \
+                                                    (string.ascii_lowercase if letters_lower.get() == True else '') + \
                                                     (string.digits if digits.get() == True else '') + \
                                                     (string.punctuation if punctuation.get() == True else '') + \
-                                                    (russian_alphabet if letters_rus.get() == True else '')) for i in range(length))
+                                                    (russian_alphabet_upper if letters_rus_upper.get() == True else '') + \
+                                                    (russian_alphabet_lower if letters_rus_lower.get() == True else '')) for i in range(length))
         window.clipboard_clear()
         window.clipboard_append(x)                          
         copy_btn.config(text='Text copied!', state=DISABLED)
     else:
-        x = ''.join(random.choice((string.ascii_letters if letters.get() == True else '') + \
+        x = ''.join(random.choice((string.ascii_uppercase if letters_upper.get() == True else '') + \
+                                                    (string.ascii_lowercase if letters_lower.get() == True else '') + \
                                                     (string.digits if digits.get() == True else '') + \
                                                     (string.punctuation if punctuation.get() == True else '') + \
-                                                    (russian_alphabet if letters_rus.get() == True else '')) for i in range(5000000))
+                                                    (russian_alphabet_upper if letters_rus_upper.get() == True else '') + \
+                                                    (russian_alphabet_lower if letters_rus_lower.get() == True else '')) for i in range(5000000))
         x = x*round(length/5000000)
         window.clipboard_clear()
         window.clipboard_append(x)
