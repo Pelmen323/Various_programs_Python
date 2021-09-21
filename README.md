@@ -62,8 +62,9 @@ Both .py and .exe
 - Different used symbols (English letters, Russian letters, digits, special symbols) with the ability to choose any combination
 - Copy to clipboard function (strings over 50k symbols are copied to clipboard automatically)
 
-Both .py and .exe
+Both .py and .exe. Also added module to use in any Python code as standalone generator of strings with various settings
 
 ![Снимок экрана (874)](https://user-images.githubusercontent.com/43440389/134017023-7eda907c-559e-4464-b328-fc5bae744bdd.png)
-
+Module:
+![Снимок экрана (884)](https://user-images.githubusercontent.com/43440389/134143140-2c29a5ca-9308-4e12-8b43-62a59bfe5a17.png)
 
