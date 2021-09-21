@@ -68,3 +68,12 @@ Both .py and .exe. Also added module to use in any Python code as standalone gen
 Module:
 ![Снимок экрана (884)](https://user-images.githubusercontent.com/43440389/134143140-2c29a5ca-9308-4e12-8b43-62a59bfe5a17.png)
 
+# 9. Count words from file
+
+Calculates the number of words in document, number of unique words, and displays each unique word with the frequency sorted by most popular words.
+Main benefit - the file is selected with standard windows explorer dialog (you don't need to input file path manually)
+
+Both .py and .exe
+
+![Снимок экрана (887)](https://user-images.githubusercontent.com/43440389/134176292-b50f2253-a685-4c40-9008-7453c48c463c.png)
+
