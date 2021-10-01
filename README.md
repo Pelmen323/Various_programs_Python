@@ -77,3 +77,11 @@ Both .py and .exe
 
 ![Снимок экрана (887)](https://user-images.githubusercontent.com/43440389/134176292-b50f2253-a685-4c40-9008-7453c48c463c.png)
 
+# 10. Bad words seeker
+
+Finds all matches in all text files in the set folder, and prints the file, the line, the incorrect and correct versions of the word. Contains a dict with 300+ commonly misspelt words
+
+Only .py
+
+![Снимок экрана (1100)](https://user-images.githubusercontent.com/43440389/135616385-e77e80bf-55b2-411e-a3c0-a1584d557b0f.png)
+
