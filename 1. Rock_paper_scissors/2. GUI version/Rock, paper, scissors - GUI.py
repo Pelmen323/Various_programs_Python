@@ -7,7 +7,7 @@ possible_choices = ['rock', 'paper', 'scissors']
 player_score = 0
 computer_score = 0
 
-# Everything that should not be available is blocked. Background colors are changed depending on win/lose/draw
+
 def start_a_game():
     global num_of_rounds
     start.config(state=DISABLED)
@@ -35,31 +35,30 @@ def select(argument):
     computer_choice = random.choice(possible_choices)
     player_choice = argument
     current_round += 1
-    # Lets see if player or PC won:
 
     if player_choice == computer_choice:
-        info_label.config(text="Computer: "+ computer_choice + ", Player: "+ player_choice + ". Draw!")
+        info_label.config(text=f"Computer: {computer_choice}, Player: {player_choice}. Draw!")
 
     elif player_choice == 'rock':                                                                               # Rock
         if computer_choice == 'paper':
-            info_label.config(text="Computer: "+ computer_choice + ", Player: "+ player_choice + ". Defeat!")
+            info_label.config(text=f"Computer: {computer_choice}, Player: {player_choice}. Defeat!")
             computer_score += 1
         if computer_choice == 'scissors':
-            info_label.config(text="Computer: "+ computer_choice + ", Player: "+ player_choice + ". Win!")
+            info_label.config(text=f"Computer: {computer_choice}, Player: {player_choice}. Win!")
             player_score += 1
     elif player_choice == 'paper':                                                                              # Paper
         if computer_choice == 'scissors':
-            info_label.config(text="Computer: "+ computer_choice + ", Player: "+ player_choice + ". Defeat!")
+            info_label.config(text=f"Computer: {computer_choice}, Player: {player_choice}. Defeat!")
             computer_score += 1
         if computer_choice == 'rock':
-            info_label.config(text="Computer: "+ computer_choice + ", Player: "+ player_choice + ". Win!")
+            info_label.config(text=f"Computer: {computer_choice}, Player: {player_choice}. Win!")
             player_score += 1
     elif player_choice == 'scissors':                                                                           # Scissors
         if computer_choice == 'rock':
-            info_label.config(text="Computer: "+ computer_choice + ", Player: "+ player_choice + ". Defeat!")
+            info_label.config(text=f"Computer: {computer_choice}, Player: {player_choice}. Defeat!")
             computer_score += 1
         if computer_choice == 'paper':
-            info_label.config(text="Computer: "+ computer_choice + ", Player: "+ player_choice + ". Win!")
+            info_label.config(text=f"Computer: {computer_choice}, Player: {player_choice}. Win!")
             player_score += 1
 
     # Visually display hom many rounds left
@@ -67,24 +66,24 @@ def select(argument):
     # check if num of rounds does not exceed
     if current_round == num_of_rounds:
         # Print the game result and change the theme
-        if player_score > computer_score: 
-            results_label.config(text="Player wins! The score is {} vs {}.".format(player_score, computer_score))
+        if player_score > computer_score:
+            results_label.config(text=f"Player wins! The score is {player_score} vs {computer_score}.")
             window.config(background='#bbff99')
             scale.config(background='#bbff99')
             rounds_label.config(background='#bbff99')
             scale.config(background='#bbff99')
             info_label.config(background='#bbff99')
             results_label.config(background='#bbff99')
-        if player_score < computer_score: 
-            results_label.config(text="Computer wins! The score is {} vs {}.".format(player_score, computer_score))
+        if player_score < computer_score:
+            results_label.config(text=f"Computer wins! The score is {player_score} vs {computer_score}.")
             window.config(background='#ff9999')
             scale.config(background='#ff9999')
             rounds_label.config(background='#ff9999')
             scale.config(background='#ff9999')
             info_label.config(background='#ff9999')
             results_label.config(background='#ff9999')
-        if player_score == computer_score: 
-            results_label.config(text="Draw! The score is {} vs {}.".format(player_score, computer_score))
+        if player_score == computer_score:
+            results_label.config(text=f"Draw! The score is {player_score} vs {computer_score}.")
             window.config(background='#fffa99')
             scale.config(background='#fffa99')
             rounds_label.config(background='#fffa99')
